@@ -3,7 +3,12 @@
   display: flex;
 }
 
-.header-wrapper {
+#App {
+  display: flex;
+  flex-direction: column;
+}
+
+#header-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: left;
@@ -11,37 +16,43 @@
   flex-direction: column;
 }
 
-.sub-wrapper {
+#sub-wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
-.left-wrapper {
+#left-wrapper {
+  display: flex;
   margin-right: 1em;
+  flex-direction: column;
 }
 
-.map-section {
+#map-section {
   display: flex;
   flex-direction: column;
 }
 
-.quick-links {
+#quick-links {
   display: flex;
   flex-direction: column;
 }
 
-.feeds {
+#feeds {
   display: flex;
   width: 540px;
 }
 
-.bsg-twit-embed {
+#bsg-twit-embed {
   display: flex;
   flex-direction: column;
 }
 
-.right-wrapper {
+#reddit-posts {
+  display: flex;
+  flex-direction: column;
+}
+
+#right-wrapper {
   display: flex;
   flex-direction: row;
 }
@@ -61,18 +72,18 @@
     font-size: 1em;
   }
 
-  .App {
+  #App {
     margin-left: 12px;
   }
 
-  .header-wrapper {
+  #header-wrapper {
     margin-bottom: 0;
   }
 
-  .sub-wrapper {
+  #sub-wrapper {
     flex-direction: column;
   }
-  .feeds {
+  #feeds {
     flex-direction: column;
     width: 80vw;
   }

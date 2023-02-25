@@ -26,20 +26,4 @@ const quickLinks = [
   },
 ];
 
-// const QuickLinks = () => {
-//   const list = links.map((l) => {
-//     return (
-//       <li key={l.name}>
-//         <a href={l.url}>{l.name}</a>
-//       </li>
-//     );
-//   });
-//   return (
-//     <div className="quicklinks">
-//       <h2>Helpful Quick Links</h2>
-//       <ul>{list}</ul>
-//     </div>
-//   );
-// };
-
 export default quickLinks;

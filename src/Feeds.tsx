@@ -64,7 +64,7 @@ const eftRedditHot = () => {
 
   return (
     <>
-      <div>
+      <div id="reddit-posts">
         <h3>Top cringe from /r/EscapefromTarkov</h3>
         <ul>
           {posts.map((post) => (
@@ -81,7 +81,7 @@ const eftRedditHot = () => {
 const bsgTwitterFeed = () => {
   return (
     <>
-      <div className="bsg-twit-embed">
+      <div id="bsg-twit-embed">
         <h2>Feeds</h2>
         <Timeline
           dataSource={{
@@ -101,7 +101,7 @@ const bsgTwitterFeed = () => {
 
 const Feeds = () => {
   return (
-    <div className="feeds">
+    <div id="feeds">
       {bsgTwitterFeed()}
       {eftRedditHot()}
       {/* {eftVgGeneral()} */}

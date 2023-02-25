@@ -3,11 +3,7 @@ interface Link {
   url: string;
 }
 
-const LinkSection = (props: {
-  links: Link[];
-  header: string;
-  className: string;
-}) => {
+const LinkSection = (props: { links: Link[]; header: string; id: string }) => {
   const list = props.links.map((e) => {
     return (
       <li key={e.name}>
@@ -16,7 +12,7 @@ const LinkSection = (props: {
     );
   });
   return (
-    <div className={props.className}>
+    <div id={props.id}>
       <h2>{props.header}</h2>
       <ul>{list}</ul>
     </div>
