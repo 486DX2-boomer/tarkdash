@@ -7,8 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: left;
-  margin-bottom: 4em;
-  margin-left: 1em;
+  margin-bottom: 2em;
   flex-direction: column;
 }
 
@@ -62,6 +61,10 @@
     font-size: 1em;
   }
 
+  .App {
+    margin-left: 12px;
+  }
+
   .header-wrapper {
     margin-bottom: 0;
   }
@@ -71,6 +74,6 @@
   }
   .feeds {
     flex-direction: column;
-    width: 50vw;
+    width: 80vw;
   }
 }
