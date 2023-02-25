@@ -65,7 +65,7 @@ const eftVgGeneral = () => {
       });
   }, []);
 
-  return eftgLink;
+  return <div id="eft-general-link">{eftgLink}</div>;
 };
 
 const eftRedditHot = () => {
@@ -119,7 +119,6 @@ const Feeds = () => {
     <div id="feeds">
       {bsgTwitterFeed()}
       {eftRedditHot()}
-      {/* {eftVgGeneral()} */}
       {ytGigabeefEmbed()}
     </div>
   );
