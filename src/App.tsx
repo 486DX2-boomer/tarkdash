@@ -16,10 +16,19 @@ import Feeds from "./Feeds";
 function App() {
   return (
     <div className="App">
-      <h1>Tarkdash</h1>
-      <Maps />
-      <QuickLinks />
-      <Feeds />
+      <div className="header-wrapper">
+        <h1>Tarkdash</h1>
+        🧩helpful links for EFT🧩
+      </div>
+      <div className="sub-wrapper">
+        <div className="left-wrapper">
+          <Maps />
+          <QuickLinks />
+        </div>
+        <div className="right-wrapper">
+          <Feeds />
+        </div>
+      </div>
     </div>
   );
 }

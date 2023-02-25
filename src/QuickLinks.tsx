@@ -25,13 +25,13 @@ const links = [
 const QuickLinks = () => {
   const list = links.map((l) => {
     return (
-      <ul>
+      <li key={l.name}>
         <a href={l.url}>{l.name}</a>
-      </ul>
+      </li>
     );
   });
   return (
-    <div>
+    <div className="quicklinks">
       <h2>Helpful Quick Links</h2>
       <ul>{list}</ul>
     </div>

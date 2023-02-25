@@ -34,9 +34,9 @@ const links = [
 const MapSection = () => {
   const list = links.map((l) => {
     return (
-      <p>
+      <li key={l.mapLink}>
         <a href={l.mapLink}>{l.mapName}</a>
-      </p>
+      </li>
     );
   });
 

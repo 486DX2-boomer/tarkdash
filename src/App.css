@@ -1,42 +1,58 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 1rem;
+  display: flex;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  margin-bottom: 4em;
+  margin-left: 1em;
+  flex-direction: column;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.sub-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left-wrapper {
+  margin-right: 1em;
+}
+
+.map-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.quicklinks {
+  display: flex;
+  flex-direction: column;
+}
+
+.feeds {
+  display: flex;
+  width: 540px;
+}
+
+.bsg-twit-embed {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+/* change flex direction if screen narrower than 800 px */
+@media (max-width: 800px) {
+  .sub-wrapper {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .feeds {
+    flex-direction: column;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
