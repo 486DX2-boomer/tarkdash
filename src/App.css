@@ -49,10 +49,28 @@
 
 /* change flex direction if screen narrower than 800 px */
 @media (max-width: 800px) {
+  #root {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    overflow: scroll;
+    align-items: left;
+    word-break: break-all;
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  .header-wrapper {
+    margin-bottom: 0;
+  }
+
   .sub-wrapper {
     flex-direction: column;
   }
   .feeds {
     flex-direction: column;
+    width: 50vw;
   }
 }
