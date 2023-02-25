@@ -24,6 +24,10 @@ const quickLinks = [
     name: "Tarkov Tracker",
     url: "https://tarkovtracker.io/",
   },
+  {
+    name: "Ballistics Calculator",
+    url: "https://calculator.tarkov-ballistics.com/",
+  },
 ];
 
 export default quickLinks;
