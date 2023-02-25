@@ -52,6 +52,16 @@
   flex-direction: column;
 }
 
+.yt-embed {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+}
+
+#gigabeef-embed {
+  display: flex;
+}
+
 #right-wrapper {
   display: flex;
   flex-direction: row;

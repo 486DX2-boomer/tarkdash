@@ -15,6 +15,21 @@ const truncate = (str: string) => {
   } else return str;
 };
 
+// request from a friend: embed Gigabeef's latest video
+const ytGigabeefEmbed = () => {
+  return (
+    <div className="yt-embed">
+      <h2> Latest Gigabeef vid</h2>
+      <iframe
+        id="gigabeef-embed"
+        width="400"
+        height="240"
+        src="https://www.youtube.com/embed?listType=user_uploads&list=Gigabeef"
+      ></iframe>
+    </div>
+  );
+};
+
 // Even though this component works as intended and does exactly what it's supposed to do, /eftg/ just never shows up in the request.
 // I manually checked to make sure /eftg/ is actually in the catalog, it's there, but I just can't find it for whatever reason.
 const eftVgGeneral = () => {
@@ -50,7 +65,7 @@ const eftVgGeneral = () => {
       });
   }, []);
 
-  return <>{eftgLink}</>;
+  return eftgLink;
 };
 
 const eftRedditHot = () => {
@@ -105,6 +120,7 @@ const Feeds = () => {
       {bsgTwitterFeed()}
       {eftRedditHot()}
       {/* {eftVgGeneral()} */}
+      {ytGigabeefEmbed()}
     </div>
   );
 };
