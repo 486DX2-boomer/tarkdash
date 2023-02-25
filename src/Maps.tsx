@@ -24,6 +24,7 @@ const mapLinks = [
     name: "Streets",
     url: "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/17/StreetsOfTarkov3DMapByRE3MR.jpg",
   },
+  { name: "Interchange", url: "https://mapgenie.io/tarkov/maps/interchange" },
 ];
 
 export default mapLinks;

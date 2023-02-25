@@ -13,8 +13,6 @@ function App() {
       </div>
       <div className="sub-wrapper">
         <div className="left-wrapper">
-          {/* <Maps /> */}
-          {/* <QuickLinks /> */}
           <LinkSection links={mapLinks} header="Maps" className="map-section" />
           <LinkSection
             links={quickLinks}
