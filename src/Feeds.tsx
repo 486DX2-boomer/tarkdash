@@ -1,6 +1,14 @@
 import { Timeline } from "react-twitter-widgets";
 import { useState, useEffect } from "react";
 
+interface Post {
+  data: {
+    id: string;
+    url: string;
+    title: string;
+  };
+}
+
 const truncate = (str: string) => {
   if (str.length > 60) {
     return str.slice(0, 60) + "...";
@@ -17,7 +25,7 @@ const eftVgGeneral = () => {
 };
 
 const eftRedditHot = () => {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
     fetch("https://www.reddit.com/r/EscapefromTarkov/hot.json?limit=5")
