@@ -15,13 +15,42 @@ const truncate = (str: string) => {
   } else return str;
 };
 
+// Even though this component works as intended and does exactly what it's supposed to do, /eftg/ just never shows up in the request.
+// I manually checked to make sure /eftg/ is actually in the catalog, it's there, but I just can't find it for whatever reason.
 const eftVgGeneral = () => {
-  return (
-    <>
-      4ch's API doesn't allow CORS, so unless I have an external proxy running,
-      I can't parse its catalog
-    </>
-  );
+  const [eftgLink, setEftgLink] = useState<string>("");
+
+  useEffect(() => {
+    // use allorigins to bypass CORS
+    fetch(
+      `https://api.allorigins.win/get?url=${encodeURIComponent(
+        "https://a.4cdn.org/vg/catalog.json"
+      )}`
+    )
+      .then((response) => {
+        if (response.ok) return response.json();
+        throw new Error("Network response was not ok.");
+      })
+      .then((data) => {
+        // console.log(JSON.parse(data.contents));
+        for (let p = 0; p < 10; p++) {
+          const page = JSON.parse(data.contents)[p];
+          for (let t = 0; t < 10; t++) {
+            const thread = page.threads[t];
+            // console.log(thread.sub);
+            if (thread.sub.includes("eftg")) {
+              // console.log("EFTG found: " + thread.no);
+              setEftgLink(`https://boards.4channel.org/vg/thread/${thread.no}`);
+              return;
+            } else {
+              setEftgLink("Sorry, couldn't find /eftg/ in the catalog.");
+            }
+          }
+        }
+      });
+  }, []);
+
+  return <>{eftgLink}</>;
 };
 
 const eftRedditHot = () => {
