@@ -1,17 +1,8 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import "./App.css";
-// Maps section
-import Maps from "./Maps";
-// Quicklinks
-import QuickLinks from "./QuickLinks";
-// Quests section
-// Ammo chart section
-// Items to keep section
-// BSG twitter feed
-// R*ddit feed
-// 4ch /eft/ general link
+import LinkSection from "./LinkSection";
 import Feeds from "./Feeds";
+import mapLinks from "./Maps";
+import quickLinks from "./QuickLinks";
 
 function App() {
   return (
@@ -22,8 +13,14 @@ function App() {
       </div>
       <div className="sub-wrapper">
         <div className="left-wrapper">
-          <Maps />
-          <QuickLinks />
+          {/* <Maps /> */}
+          {/* <QuickLinks /> */}
+          <LinkSection links={mapLinks} header="Maps" className="map-section" />
+          <LinkSection
+            links={quickLinks}
+            header="Helpful Quick Links"
+            className="quick-links"
+          />
         </div>
         <div className="right-wrapper">
           <Feeds />

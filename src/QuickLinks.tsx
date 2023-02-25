@@ -1,4 +1,4 @@
-const links = [
+const quickLinks = [
   {
     name: "Shooter Born in Heaven Ranges",
     url: "https://imgur.com/a/LAWSkJk?fbclid=IwAR09r_hgLEgVMqnllMUOJcw5ebSjr-jo-2FYLIFi7sTGhpzH0ojmFjtySis",
@@ -26,20 +26,20 @@ const links = [
   },
 ];
 
-const QuickLinks = () => {
-  const list = links.map((l) => {
-    return (
-      <li key={l.name}>
-        <a href={l.url}>{l.name}</a>
-      </li>
-    );
-  });
-  return (
-    <div className="quicklinks">
-      <h2>Helpful Quick Links</h2>
-      <ul>{list}</ul>
-    </div>
-  );
-};
+// const QuickLinks = () => {
+//   const list = links.map((l) => {
+//     return (
+//       <li key={l.name}>
+//         <a href={l.url}>{l.name}</a>
+//       </li>
+//     );
+//   });
+//   return (
+//     <div className="quicklinks">
+//       <h2>Helpful Quick Links</h2>
+//       <ul>{list}</ul>
+//     </div>
+//   );
+// };
 
-export default QuickLinks;
+export default quickLinks;
