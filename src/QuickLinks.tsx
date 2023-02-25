@@ -16,6 +16,14 @@ const links = [
     name: "Ammo Chart",
     url: "https://eft-ammo.com/",
   },
+  {
+    name: "Tarkov.dev",
+    url: "https://tarkov.dev/",
+  },
+  {
+    name: "Tarkov Tracker",
+    url: "https://tarkovtracker.io/",
+  },
 ];
 
 const QuickLinks = () => {
