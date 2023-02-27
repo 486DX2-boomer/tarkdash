@@ -30,6 +30,43 @@ const ytGigabeefEmbed = () => {
   );
 };
 
+// The idea here was that the youtube embed could cycle through different channels
+// But for some arbitrary nonsense reason, only Gigabeef's embed works.
+// The code is fine, it's working as intended, it's something with Youtube not allowing embeds
+const ytEmbed = () => {
+  const [ytChannel, setYtChannel] = useState<string>("Gigabeef");
+  const [ytChannelIndex, setYtChannelIndex] = useState<number>(0);
+
+  const channels = ["Gigabeef", "Pestily", "JesseKazam"];
+
+  const handleClick = () => {
+    if (ytChannelIndex < channels.length - 1) {
+      setYtChannelIndex(ytChannelIndex + 1);
+      setYtChannel(channels[ytChannelIndex + 1]);
+    } else {
+      setYtChannelIndex(0);
+      setYtChannel(channels[0]);
+    }
+  };
+
+  return (
+    <div className="yt-embed">
+      <h2>
+        Latest vid from <button onClick={handleClick}>{ytChannel}</button>
+      </h2>
+      <iframe
+        id={ytChannel + "embed"}
+        width="400"
+        height="240"
+        src={
+          "https://www.youtube.com/embed?listType=user_uploads&list=" +
+          ytChannel
+        }
+      ></iframe>
+    </div>
+  );
+};
+
 // Even though this component works as intended and does exactly what it's supposed to do, /eftg/ just never shows up in the request.
 // I manually checked to make sure /eftg/ is actually in the catalog, it's there, but I just can't find it for whatever reason.
 const eftVgGeneral = () => {
