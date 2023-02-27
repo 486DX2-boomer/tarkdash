@@ -14,7 +14,7 @@ const LinkSection = (props: { links: Link[]; header: string; id: string }) => {
     );
   });
   return (
-    <div id={props.id}>
+    <div id={props.id} className="light-column-bg">
       <h2>{props.header}</h2>
       <ul>{list}</ul>
     </div>

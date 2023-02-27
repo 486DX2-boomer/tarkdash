@@ -109,14 +109,14 @@ const eftRedditHot = () => {
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
-    fetch("https://www.reddit.com/r/EscapefromTarkov/hot.json?limit=5")
+    fetch("https://www.reddit.com/r/EscapefromTarkov/hot.json?limit=15")
       .then((res) => res.json())
       .then((data) => setPosts(data.data.children));
   }, []);
 
   return (
     <>
-      <div id="reddit-posts">
+      <div id="reddit-posts" className="light-column-bg">
         <h3>Top cringe from /r/EscapefromTarkov</h3>
         <ul>
           {posts.map((post) => (

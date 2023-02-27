@@ -43,8 +43,6 @@ body {
 
 h1 {
   font-size: 3em;
-  line-height: 1;
-
   color: #ff6262;
   text-shadow: 1px 1px 0px #7a5454, 1px 2px 0px #553535, 1px 3px 0px #583b3b,
     1px 4px 0px #573b3b, 1px 5px 0px #5a4141, 1px 6px 0px #332424,
@@ -53,11 +51,11 @@ h1 {
 }
 
 h2 {
-  padding: 0.25em;
+  padding: 0;
 }
 
 h3 {
-  padding: 1em;
+  padding: 0;
 }
 
 @media (prefers-color-scheme: light) {
