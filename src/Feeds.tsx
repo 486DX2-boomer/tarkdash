@@ -84,7 +84,9 @@ const eftRedditHot = () => {
         <ul>
           {posts.map((post) => (
             <li key={post.data.id}>
-              <a href={post.data.url}>{truncate(post.data.title)}</a>
+              <a href={post.data.url} target="_blank">
+                {truncate(post.data.title)}
+              </a>
             </li>
           ))}
         </ul>

@@ -7,7 +7,9 @@ const LinkSection = (props: { links: Link[]; header: string; id: string }) => {
   const list = props.links.map((e) => {
     return (
       <li key={e.name}>
-        <a href={e.url}>{e.name}</a>
+        <a href={e.url} target="_blank">
+          {e.name}
+        </a>
       </li>
     );
   });
