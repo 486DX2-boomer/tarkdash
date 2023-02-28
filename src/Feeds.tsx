@@ -22,7 +22,7 @@ const ytGigabeefEmbed = () => {
       <h2 className="text-xl text-white pb-2">Latest Gigabeef vid</h2>
       <iframe
         id="gigabeef-embed"
-        width="400"
+        width="560"
         height="540"
         src="https://www.youtube.com/embed?listType=user_uploads&list=Gigabeef"
         className="rounded-xl shadow-xl"
