@@ -18,13 +18,14 @@ const truncate = (str: string) => {
 // request from a friend: embed Gigabeef's latest video
 const ytGigabeefEmbed = () => {
   return (
-    <div className="yt-embed">
-      <h2> Latest Gigabeef vid</h2>
+    <div className="hidden md:flex flex-col bg-stone-700 rounded-xl pl-2 pr-2 pt-1 shadow-xl">
+      <h2 className="text-xl text-white pb-2">Latest Gigabeef vid</h2>
       <iframe
         id="gigabeef-embed"
         width="400"
-        height="240"
+        height="540"
         src="https://www.youtube.com/embed?listType=user_uploads&list=Gigabeef"
+        className="rounded-xl shadow-xl"
       ></iframe>
     </div>
   );
@@ -50,7 +51,7 @@ const ytEmbed = () => {
   };
 
   return (
-    <div className="yt-embed">
+    <div>
       <h2>
         Latest vid from <button onClick={handleClick}>{ytChannel}</button>
       </h2>
@@ -116,13 +117,20 @@ const eftRedditHot = () => {
 
   return (
     <>
-      <div id="reddit-posts" className="light-column-bg">
-        <h3>Top cringe from /r/EscapefromTarkov</h3>
+      <div
+        id="reddit-posts"
+        className="bg-stone-700 text-white pl-2 pt-1 ml-2 pr-2 rounded-xl shadow-xl mb-2 md:mb-0 md:mr-2"
+      >
+        <h3 className="text-xl mb-2">Top cringe from /r/EscapefromTarkov</h3>
         <ul>
           {posts.map((post) => (
-            <li key={post.data.id}>
-              <a href={post.data.url} target="_blank">
-                {truncate(post.data.title)}
+            <li key={post.data.id} className="mb-1">
+              <a
+                href={post.data.url}
+                target="_blank"
+                className="text-red-400 hover:text-red-300"
+              >
+                ◽ {truncate(post.data.title)}
               </a>
             </li>
           ))}
@@ -135,8 +143,11 @@ const eftRedditHot = () => {
 const bsgTwitterFeed = () => {
   return (
     <>
-      <div id="bsg-twit-embed">
-        <h2>Feeds</h2>
+      <div
+        id="bsg-twit-embed"
+        className="bg-stone-700 rounded-xl ml-2 pl-2 pr-2 pb-2 pt-1 shadow-xl mb-2 md:mb-0"
+      >
+        <h2 className="text-white text-xl mb-2">Feeds</h2>
         <Timeline
           dataSource={{
             sourceType: "profile",
@@ -155,7 +166,7 @@ const bsgTwitterFeed = () => {
 
 const Feeds = () => {
   return (
-    <div id="feeds">
+    <div id="feeds" className="flex flex-col md:flex-row mr-2 md:mr-0">
       {bsgTwitterFeed()}
       {eftRedditHot()}
       {ytGigabeefEmbed()}
