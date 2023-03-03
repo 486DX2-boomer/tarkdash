@@ -9,7 +9,7 @@ const mapLinks = [
   },
   {
     name: "Shoreline",
-    url: "https://www.gamemaps.co.uk/game/tarkov/maps/interchange_nightshade_yundaz_ver2",
+    url: "https://www.gamemaps.co.uk/game/tarkov/maps/shoreline_clean_monkimonkimonk",
   },
   {
     name: "Lighthouse",
@@ -24,7 +24,10 @@ const mapLinks = [
     name: "Streets",
     url: "https://static.wikia.nocookie.net/escapefromtarkov_gamepedia/images/1/17/StreetsOfTarkov3DMapByRE3MR.jpg",
   },
-  { name: "Interchange", url: "https://mapgenie.io/tarkov/maps/interchange" },
+  {
+    name: "Interchange",
+    url: "https://www.gamemaps.co.uk/game/tarkov/maps/interchange_nightshade_yundaz_ver2",
+  },
   { name: "Factory", url: "https://mapgenie.io/tarkov/maps/factory" },
 ];
 
