@@ -17,7 +17,7 @@ function App() {
         <h1 className="text-4xl text-red-400">Tarkdash</h1>
         <span className="text-white text-xl">🧩helpful links for EFT🧩</span>
       </div>
-      <div id="sub-wrapper" className="flex flex-col md:flex-row">
+      <div id="sub-wrapper" className="flex flex-col md:flex-row self-center">
         <div
           id="left-wrapper"
           className="flex flex-col ml-2 bg-stone-700 p-2 rounded-xl shadow-xl max-h-fit overflow-y-auto mb-2 md:pr-8 md:mb-0 mr-2 md:mr-0"
