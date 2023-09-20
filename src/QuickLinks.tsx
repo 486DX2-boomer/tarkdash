@@ -25,8 +25,8 @@ const quickLinks = [
     url: "https://calculator.tarkov-ballistics.com/",
   },
   {
-    name: "Shooter Born in Heaven Ranges",
-    url: "https://imgur.com/a/LAWSkJk?fbclid=IwAR09r_hgLEgVMqnllMUOJcw5ebSjr-jo-2FYLIFi7sTGhpzH0ojmFjtySis",
+    name: "Tarkov Gunsmith",
+    url: "https://tarkovgunsmith.com/index.html"
   },
 ];
 

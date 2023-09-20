@@ -9,7 +9,7 @@ const mapLinks = [
   },
   {
     name: "Shoreline",
-    url: "https://www.gamemaps.co.uk/game/tarkov/maps/shoreline_clean_monkimonkimonk",
+    url: "https://www.gamemaps.co.uk/game/tarkov/maps/shoreline_day_rearme",
   },
   {
     name: "Lighthouse",
