@@ -3,6 +3,7 @@ import LinkSection from "./LinkSection";
 import Feeds from "./Feeds";
 import mapLinks from "./Maps";
 import quickLinks from "./QuickLinks";
+import CurrencyExchangeWidget from "./CurrencyExchangeWidget";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             header="Helpful Quick Links"
             id="quick-links"
           />
+          <CurrencyExchangeWidget />
         </div>
         <div id="right-wrapper" className="flex flex-col md:flex-row">
           <Feeds />
