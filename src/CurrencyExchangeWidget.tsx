@@ -118,8 +118,10 @@ const CurrencyExchangeWidget = () => {
         />
       </div>
       <div className="text-sm text-white italic mb-2">
-        Live in-game USD/RUB exchange rate (refreshed every 5 minutes)
+        Live in-game USD/RUB exchange rate (refreshed every 5 minutes) Your
+        exact USD cost from Peacekeeper will vary.
       </div>
+
       <div className="text-xs text-white pb-1">
         Provided by{" "}
         <a
