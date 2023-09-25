@@ -96,7 +96,7 @@ const CurrencyExchangeWidget = () => {
 
   return (
     <div className="bg-stone-700 ml-2 mt-2 pl-2 pr-2 pb-2 pt-1 md:mb-0 max-h-24 max-w-xs">
-      <h2 className="text-xl text-white font-semibold mb-4">
+      <h2 className="text-l text-white font-semibold mb-3">
         USD/RUB Calculator
       </h2>
       <div className="mb-4">
@@ -120,7 +120,7 @@ const CurrencyExchangeWidget = () => {
       <div className="text-sm text-white italic mb-2">
         Live in-game USD/RUB exchange rate (refreshed every 5 minutes)
       </div>
-      <div className="text-xs text-white">
+      <div className="text-xs text-white pb-1">
         Provided by{" "}
         <a
           className="text-red-400 hover:underline"

@@ -18,7 +18,7 @@ const truncate = (str: string) => {
 // request from a friend: embed Gigabeef's latest video
 const ytGigabeefEmbed = () => {
   return (
-    <div className="hidden md:flex flex-col bg-stone-700 rounded-xl pl-2 pr-2 pt-1 shadow-xl">
+    <div className="hidden md:flex flex-col bg-stone-700 rounded-xl pl-2 pr-2 pt-1 shadow-xl mr-2">
       <h2 className="text-xl text-white pb-2">Latest Gigabeef vid</h2>
       <iframe
         id="gigabeef-embed"

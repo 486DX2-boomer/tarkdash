@@ -22,7 +22,7 @@ const mapLinks = [
   },
   {
     name: "Streets",
-    url: "https://tarkov.dev/map/streets-3d",
+    url: "https://www.re3mr.com/maps/Streets/re3mrStreetsofTarkovMobile.png",
   },
   {
     name: "Interchange",
