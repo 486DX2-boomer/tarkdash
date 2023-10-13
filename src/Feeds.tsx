@@ -151,7 +151,7 @@ const bsgTwitterFeed = () => {
         <Timeline
           dataSource={{
             sourceType: "profile",
-            screenName: "bstategames",
+            screenName: "tarkov",
           }}
           options={{
             height: "540",
