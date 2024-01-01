@@ -50,7 +50,10 @@ const LinkForm = ({
           value={l.url}
           onChange={handleFormChange}
         />
-        <button className="delete-button cursor-pointer bg-stone-200 text-red-900 font-black ml-4">
+        <button
+          id="delete-button"
+          className="cursor-pointer bg-stone-200 text-red-900 font-black ml-4"
+        >
           X
         </button>
       </div>
@@ -115,8 +118,11 @@ const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
   };
 
   return (
-    <div className="modal fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 shadow-lg">
-      <div className="modal-content bg-stone-700 p-6 rounded flex-row">
+    <div
+      id="modal"
+      className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 shadow-lg"
+    >
+      <div id="modal-content" className="bg-stone-700 p-6 rounded flex-row">
         <button
           className="close cursor-pointer font-bold bg-stone-800 text-red-400 p-1"
           onClick={props.toggleModal}
@@ -125,26 +131,31 @@ const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
         </button>
 
         {errorMessage && (
-          <span className="error-message pl-2 text-red-500 font-medium">
+          <span id="error-message" className="pl-2 text-red-500 font-medium">
             {errorMessage}
           </span>
         )}
 
         <LinkForm links={formData} handleFormChange={handleFormChange} />
 
-        <button className="add-new cursor-pointer font-bold bg-stone-800 text-red-400 p-1 ml-1 mr-1">
+        <button
+          id="add-new"
+          className="cursor-pointer font-bold bg-stone-800 text-red-400 p-1 ml-1 mr-1"
+        >
           Add New +
         </button>
 
         <button
-          className="save cursor-pointer font-bold bg-stone-800 text-red-400 p-1"
+          id="save"
+          className="cursor-pointer font-bold bg-stone-800 text-red-400 p-1"
           onClick={handleFormSave}
         >
           Save
         </button>
 
         <button
-          className="revert-to-default cursor-pointer font-bold bg-stone-800 text-red-400 p-1 ml-1 mr-1"
+          id="revert-to-default"
+          className="cursor-pointer font-bold bg-stone-800 text-red-400 p-1 ml-1 mr-1"
           onClick={handleShowDefaultWarning}
         >
           Revert to Default
