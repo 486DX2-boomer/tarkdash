@@ -1,4 +1,8 @@
-const quickLinks = [
+// quicklinks defaults
+
+import Link from "./ILink";
+
+const quickLinksDefault: Link[] = [
   {
     name: "Extracts",
     url: "https://eftfg.com/extractions",
@@ -26,8 +30,8 @@ const quickLinks = [
   },
   {
     name: "Tarkov Gunsmith",
-    url: "https://tarkovgunsmith.com/index.html"
+    url: "https://tarkovgunsmith.com/index.html",
   },
 ];
 
-export default quickLinks;
+export default quickLinksDefault;

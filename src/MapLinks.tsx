@@ -1,4 +1,8 @@
-const mapLinks = [
+// maplinks defaults
+
+import Link from "./ILink";
+
+const mapLinksDefault: Link[] = [
   {
     name: "Woods",
     url: "https://mapgenie.io/tarkov/maps/woods",
@@ -31,4 +35,4 @@ const mapLinks = [
   { name: "Factory", url: "https://mapgenie.io/tarkov/maps/factory" },
 ];
 
-export default mapLinks;
+export default mapLinksDefault;

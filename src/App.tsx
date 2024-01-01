@@ -1,11 +1,30 @@
 import "./App.css";
+import { useState, useEffect } from "react";
 import LinkSection from "./LinkSection";
 import Feeds from "./Feeds";
-import mapLinks from "./Maps";
-import quickLinks from "./QuickLinks";
 import CurrencyExchangeWidget from "./CurrencyExchangeWidget";
+import CustomizeLinksForm from "./CustomizeLinksForm";
+
+import mapLinksDefault from "./MapLinks";
+import quickLinksDefault from "./QuickLinks";
 
 function App() {
+  // load user saved map links or quick links if available. if not, load defaults.
+  const [mapLinks, setMapLinks] = useState(mapLinksDefault);
+  const [quickLinks, setQuickLinks] = useState(quickLinksDefault);
+
+  // handle toggling map link form on or off
+  const [mapLinksModalToggled, setMapLinkModalToggled] = useState(false);
+  const handleMapLinkToggle = () => {
+    setMapLinkModalToggled(!mapLinksModalToggled);
+  };
+
+  // handle toggling quick link form on or off
+  const [quickLinksModalToggled, setQuickLinkModalToggled] = useState(false);
+  const handleQuickLinksModalToggled = () => {
+    setQuickLinkModalToggled(!quickLinksModalToggled);
+  };
+
   return (
     <div
       id="App"
@@ -26,12 +45,47 @@ function App() {
           id="left-wrapper"
           className="flex flex-col ml-2 bg-stone-700 p-2 rounded-xl shadow-xl max-h-fit overflow-y-auto mb-2 md:pr-8 md:mb-0 mr-2 md:mr-0"
         >
-          <LinkSection links={mapLinks} header="Maps" id="map-section" />
+          {/* Link sections */}
+          <LinkSection links={[...mapLinks]} header="Maps" id="map-section" />
+          <button
+            className="bg-stone-800 rounded-md text-red-400 text-sm"
+            onClick={handleMapLinkToggle}
+          >
+            Customize Map Links
+          </button>
+          {/* Customize maps form */}
+          {mapLinksModalToggled && (
+            <CustomizeLinksForm
+              links={[...mapLinks]}
+              toggleModal={handleMapLinkToggle}
+              setLinksHook={setMapLinks}
+              defaultLinks={mapLinksDefault}
+            />
+          )}
+
           <LinkSection
-            links={quickLinks}
+            links={[...quickLinks]}
             header="Helpful Quick Links"
             id="quick-links"
           />
+
+          <button
+            className="bg-stone-800 rounded-md text-red-400 text-sm"
+            onClick={handleQuickLinksModalToggled}
+          >
+            Customize Quick Links
+          </button>
+          {/* Customize links form */}
+          {quickLinksModalToggled && (
+            <CustomizeLinksForm
+              links={[...quickLinks]}
+              toggleModal={handleQuickLinksModalToggled}
+              setLinksHook={setQuickLinks}
+              defaultLinks={quickLinksDefault}
+            />
+          )}
+
+          {/* Widgets */}
           <CurrencyExchangeWidget />
         </div>
         <div id="right-wrapper" className="flex flex-col md:flex-row">

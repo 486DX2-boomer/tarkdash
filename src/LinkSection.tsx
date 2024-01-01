@@ -1,7 +1,4 @@
-interface Link {
-  name: string;
-  url: string;
-}
+import Link from "./ILink";
 
 const LinkSection = (props: { links: Link[]; header: string; id: string }) => {
   const list = props.links.map((e) => {
