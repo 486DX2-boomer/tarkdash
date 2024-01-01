@@ -4,6 +4,10 @@ import Link from "./ILink";
 
 const mapLinksDefault: Link[] = [
   {
+    name: "Ground Zero",
+    url: "https://www.eft-ammo.com/maps/ground-zero-2d",
+  },
+  {
     name: "Woods",
     url: "https://mapgenie.io/tarkov/maps/woods",
   },
