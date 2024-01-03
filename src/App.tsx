@@ -1,11 +1,11 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, SetStateAction } from "react";
 import LinkSection from "./LinkSection";
 import Feeds from "./Feeds";
 import CustomizeLinksForm from "./CustomizeLinksForm";
 import SaveLoadSettings from "./SaveLoadSettings";
 import Widgets from "./Widgets";
-import Link from "./ILink";
+import About from "./About";
 
 import mapLinksDefault from "./MapLinks";
 import quickLinksDefault from "./QuickLinks";
@@ -35,6 +35,12 @@ function App() {
   const [quickLinksModalToggled, setQuickLinkModalToggled] = useState(false);
   const handleQuickLinksModalToggled = () => {
     setQuickLinkModalToggled(!quickLinksModalToggled);
+  };
+
+  // about
+  const [aboutToggled, setAboutToggled] = useState(false);
+  const handleAboutToggled = () => {
+    setAboutToggled(!aboutToggled);
   };
 
   return (
@@ -107,6 +113,16 @@ function App() {
           <Feeds />
           <Widgets />
         </div>
+      </div>
+      <div id="footer" className="fixed bottom-0 right-0 bg-stone-800 p-4">
+        <button
+          id="aboutToggle"
+          className="text-red-400 hover:text-red-300"
+          onClick={handleAboutToggled}
+        >
+          About
+        </button>
+        {aboutToggled && <About toggleAbout={setAboutToggled} />}
       </div>
     </div>
   );
