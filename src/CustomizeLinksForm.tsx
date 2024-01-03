@@ -20,45 +20,48 @@ const validateUrl = (url: string): boolean => {
 const LinkForm = ({
   links,
   handleFormChange,
+  handleDelete,
 }: {
   links: Link[];
   handleFormChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleDelete: (index: number) => void;
 }) => {
-  return links.map((l, index) => {
-    return (
-      <div key={index} className="p-1">
-        <label htmlFor={`name-${index}`} className="text-red-400 pr-2">
-          Name:
-        </label>
-        <input
-          type="text"
-          id={`name-${index}`}
-          required
-          className="bg-stone-200 text-black p-1 mr-2"
-          value={l.name}
-          onChange={handleFormChange}
-        />
+  return links.map((l, index) => (
+    <div key={index} className="p-1">
+      <label htmlFor={`name-${index}`} className="text-red-400 pr-2">
+        Name:
+      </label>
+      <input
+        type="text"
+        id={`name-${index}`}
+        required
+        className="bg-stone-200 text-black p-1 mr-2"
+        value={l.name}
+        onChange={handleFormChange}
+        data-index={index}
+      />
 
-        <label htmlFor={`url-${index}`} className="text-red-400 pr-2">
-          URL
-        </label>
-        <input
-          type="url"
-          id={`url-${index}`}
-          required
-          className="bg-stone-200 text-black p-1 text-sm"
-          value={l.url}
-          onChange={handleFormChange}
-        />
-        <button
-          id="delete-button"
-          className="cursor-pointer bg-stone-200 text-red-900 font-black ml-4"
-        >
-          X
-        </button>
-      </div>
-    );
-  });
+      <label htmlFor={`url-${index}`} className="text-red-400 pr-2">
+        URL
+      </label>
+      <input
+        type="url"
+        id={`url-${index}`}
+        required
+        className="bg-stone-200 text-black p-1 text-sm"
+        value={l.url}
+        onChange={handleFormChange}
+        data-index={index}
+      />
+      <button
+        id="delete-button"
+        className="cursor-pointer bg-stone-200 text-red-900 font-black ml-4"
+        onClick={() => handleDelete(index)}
+      >
+        X
+      </button>
+    </div>
+  ));
 };
 
 const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
@@ -79,6 +82,11 @@ const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
 
       setFormData(updatedFormData);
     }
+  };
+
+  const handleDelete = (index: number) => {
+    const updatedFormData = formData.filter((_, i) => i !== index);
+    setFormData(updatedFormData);
   };
 
   const handleFormSave = () => {
@@ -117,12 +125,24 @@ const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
     props.toggleModal();
   };
 
+  const handleAddNew = () => {
+    // Clone the existing links array to avoid mutating the state directly
+    const updatedLinks = [...formData];
+    // Add a new blank link
+    updatedLinks.push({ name: "", url: "" });
+    // Update the state with the new links
+    setFormData(updatedLinks);
+  };
+
   return (
     <div
       id="modal"
       className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 shadow-lg"
     >
-      <div id="modal-content" className="bg-stone-700 p-6 rounded flex-row">
+      <div
+        id="modal-content"
+        className="bg-stone-700 p-6 rounded flex-row overflow-scroll max-h-screen"
+      >
         <button
           className="close cursor-pointer font-bold bg-stone-800 text-red-400 p-1"
           onClick={props.toggleModal}
@@ -141,6 +161,7 @@ const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
         <button
           id="add-new"
           className="cursor-pointer font-bold bg-stone-800 text-red-400 p-1 ml-1 mr-1"
+          onClick={handleAddNew}
         >
           Add New +
         </button>
