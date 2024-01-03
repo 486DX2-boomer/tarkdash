@@ -17,7 +17,6 @@ interface EnableSaveHooksProps {
 }
 
 const EnableSaveHooks = (props: EnableSaveHooksProps) => {
-  //   console.log("Enable Save Hooks: you should see this in the console!");
   // Autosave changes to mapLinks
   useEffect(() => {
     localStorage.setItem("mapLinks", JSON.stringify(props.mapLinksReference));
@@ -34,34 +33,40 @@ const EnableSaveHooks = (props: EnableSaveHooksProps) => {
   return <></>;
 };
 
+const loadDefaultsFromLocalStorage = (
+  itemName: string,
+  setHook: React.Dispatch<React.SetStateAction<Link[]>>,
+  defaultData: Link[]
+) => {
+  if (!localStorage.getItem(itemName)) {
+    console.log(
+      `No custom ${itemName} detected, creating defaults. You should only see this once.`
+    );
+    setHook(defaultData);
+    localStorage.setItem(itemName, JSON.stringify(defaultData));
+  } else {
+    setHook(JSON.parse(localStorage.getItem(itemName) as string));
+  }
+};
+
 const SaveLoadSettings: React.FC<SaveLoadSettingsProps> = (props) => {
   const [enableSave, setEnableSave] = useState(false);
 
   useEffect(() => {
-    // Load defaults if not found in localStorage
-    if (!localStorage.getItem("mapLinks")) {
-      console.log(
-        "No custom map links detected, creating defaults. You should only see this once."
-      );
-      props.setMapLinksHook(mapLinksDefault);
-      localStorage.setItem("mapLinks", JSON.stringify(mapLinksDefault));
-    } else if (localStorage.getItem("mapLinks")) {
-      props.setMapLinksHook(
-        JSON.parse(localStorage.getItem("mapLinks") as string)
-      );
-    }
+    // Load defaults for mapLinks
+    loadDefaultsFromLocalStorage(
+      "mapLinks",
+      props.setMapLinksHook,
+      mapLinksDefault
+    );
 
-    if (!localStorage.getItem("quickLinks")) {
-      console.log(
-        "No custom quick links detected, creating defaults. You should only see this once."
-      );
-      props.setQuickLinksHook(quickLinksDefault);
-      localStorage.setItem("quickLinks", JSON.stringify(quickLinksDefault));
-    } else if (localStorage.getItem("quickLinks")) {
-      props.setQuickLinksHook(
-        JSON.parse(localStorage.getItem("quickLinks") as string)
-      );
-    }
+    // Load defaults for quickLinks
+    loadDefaultsFromLocalStorage(
+      "quickLinks",
+      props.setQuickLinksHook,
+      quickLinksDefault
+    );
+
     setEnableSave(true);
   }, []);
 
