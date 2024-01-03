@@ -72,7 +72,7 @@ function App() {
           {/* Link sections */}
           <LinkSection links={[...mapLinks]} header="Maps" id="map-section" />
           <button
-            className="bg-stone-800 rounded-md text-red-400 text-sm"
+            className="bg-stone-800 rounded-md text-red-400 hover:text-red-300 text-sm"
             onClick={handleMapLinkToggle}
           >
             Customize Map Links
@@ -94,7 +94,7 @@ function App() {
           />
 
           <button
-            className="bg-stone-800 rounded-md text-red-400 text-sm"
+            className="bg-stone-800 rounded-md text-red-400 hover:text-red-300 text-sm"
             onClick={handleQuickLinksModalToggled}
           >
             Customize Quick Links

@@ -102,7 +102,7 @@ const CurrencyExchangeWidget = () => {
       <div className="mb-4">
         <label className="block text-sm text-green-400 font-medium">USD:</label>
         <input
-          className="border border-gray-300 bg-stone-400 rounded-md p-2 w-full"
+          className="border border-gray-300 bg-stone-400 rounded-md p-2 w-full text-slate-800 font-medium"
           type="text"
           value={usdInput}
           onChange={handleUsdInputChange}
@@ -111,7 +111,7 @@ const CurrencyExchangeWidget = () => {
       <div className="mb-4">
         <label className="block text-sm text-red-400 font-medium">RUB:</label>
         <input
-          className="border border-gray-300 bg-stone-400 rounded-md p-2 w-full"
+          className="border border-gray-300 bg-stone-400 rounded-md p-2 w-full text-slate-800 font-medium"
           type="text"
           value={rubInput}
           onChange={handleRubInputChange}

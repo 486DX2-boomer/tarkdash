@@ -55,7 +55,7 @@ const LinkForm = ({
       />
       <button
         id="delete-button"
-        className="cursor-pointer bg-stone-200 text-red-900 font-black ml-4"
+        className="cursor-pointer p-1 bg-stone-200 text-red-900 hover:text-red-600 rounded-sm font-black ml-4"
         onClick={() => handleDelete(index)}
       >
         X
@@ -144,7 +144,7 @@ const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
         className="bg-stone-700 p-6 rounded flex-row overflow-scroll max-h-screen"
       >
         <button
-          className="close cursor-pointer font-bold bg-stone-800 text-red-400 p-1"
+          className="close cursor-pointer font-bold bg-stone-800 text-red-400 hover:bg-stone-600 p-1"
           onClick={props.toggleModal}
         >
           Close
@@ -164,7 +164,7 @@ const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
 
         <button
           id="add-new"
-          className="cursor-pointer font-bold bg-stone-800 text-red-400 p-1 ml-1 mr-1"
+          className="cursor-pointer font-bold bg-stone-800 text-red-400 hover:bg-stone-600 p-1 ml-1 mr-1"
           onClick={handleAddNew}
         >
           Add New +
@@ -172,7 +172,7 @@ const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
 
         <button
           id="save"
-          className="cursor-pointer font-bold bg-stone-800 text-red-400 p-1"
+          className="cursor-pointer font-bold bg-stone-800 text-red-400 hover:bg-stone-600 p-1"
           onClick={handleFormSave}
         >
           Save
@@ -180,7 +180,7 @@ const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
 
         <button
           id="revert-to-default"
-          className="cursor-pointer font-bold bg-stone-800 text-red-400 p-1 ml-1 mr-1"
+          className="cursor-pointer font-bold bg-stone-800 text-red-400 hover:bg-stone-600 p-1 ml-1 mr-1"
           onClick={handleShowDefaultWarning}
         >
           Revert to Default
@@ -190,7 +190,7 @@ const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
             This will revert all your link customizations to default.
             <br /> Are you sure?
             <button
-              className="bg-stone-900 m-2 p-1"
+              className="bg-stone-900 hover:bg-stone-600 m-2 p-1"
               onClick={handleRevertToDefault}
             >
               Confirm
