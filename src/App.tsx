@@ -4,14 +4,26 @@ import LinkSection from "./LinkSection";
 import Feeds from "./Feeds";
 import CurrencyExchangeWidget from "./CurrencyExchangeWidget";
 import CustomizeLinksForm from "./CustomizeLinksForm";
+import SaveLoadSettings from "./SaveLoadSettings";
+import Link from "./ILink";
 
 import mapLinksDefault from "./MapLinks";
 import quickLinksDefault from "./QuickLinks";
 
 function App() {
-  // load user saved map links or quick links if available. if not, load defaults.
-  const [mapLinks, setMapLinks] = useState(mapLinksDefault);
-  const [quickLinks, setQuickLinks] = useState(quickLinksDefault);
+  // initialize with blank Link[], loading is handled in SaveLoadSettings
+  const [mapLinks, setMapLinks] = useState([
+    {
+      name: "",
+      url: "",
+    },
+  ]);
+  const [quickLinks, setQuickLinks] = useState([
+    {
+      name: "",
+      url: "",
+    },
+  ]);
 
   // handle toggling map link form on or off
   const [mapLinksModalToggled, setMapLinkModalToggled] = useState(false);
@@ -30,6 +42,12 @@ function App() {
       id="App"
       className="flex flex-col bg-stone-800 min-h-full md:min-h-screen"
     >
+      <SaveLoadSettings
+        setMapLinksHook={setMapLinks}
+        mapLinksReference={mapLinks}
+        setQuickLinksHook={setQuickLinks}
+        quickLinksReference={quickLinks}
+      />
       <div
         id="header-wrapper"
         className="flex flex-col ml-2 mt-3 mb-2 space-y-3 mr-2 rounded-xl p-2"
