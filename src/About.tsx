@@ -14,6 +14,31 @@ const About = (props: AboutProps) => {
           Customize or add more links using Customize buttons. Your
           customizations are saved on your device.
         </p>
+        <p className="text-md mb-2">
+          Built with{" "}
+          <a
+            className="text-red-400 hover:text-red-300"
+            href="https://vitejs.dev/"
+          >
+            Vite
+          </a>
+          ,{" "}
+          <a
+            className="text-red-400 hover:text-red-300"
+            href="https://tailwindcss.com/"
+          >
+            TailwindCSS
+          </a>
+        </p>
+        <p className="text-sm italic text-red-400 mb-2">
+          Check the{" "}
+          <a
+            className="text-rose-600 underline hover:text-red-300 cursor-pointer"
+            href="https://github.com/486DX2-boomer/tarkdash"
+          >
+            repo.
+          </a>
+        </p>
         <p className="text-lg mb-2">Special thanks to:</p>
         <ul className="list-disc pl-6">
           <li>
