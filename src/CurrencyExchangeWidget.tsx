@@ -95,7 +95,7 @@ const CurrencyExchangeWidget = () => {
   };
 
   return (
-    <div className="bg-stone-700 ml-2 mt-2 pl-2 pr-2 pb-2 pt-1 md:mb-0 max-h-24 max-w-xs">
+    <div className="bg-stone-800 ml-1 mt-2 pl-2 pr-2 pb-2 pt-1 md:mb-0 max-w-xs rounded-md shadow-sm">
       <h2 className="text-l text-white font-semibold mb-3">
         USD/RUB Calculator
       </h2>

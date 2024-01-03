@@ -2,9 +2,9 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import LinkSection from "./LinkSection";
 import Feeds from "./Feeds";
-import CurrencyExchangeWidget from "./CurrencyExchangeWidget";
 import CustomizeLinksForm from "./CustomizeLinksForm";
 import SaveLoadSettings from "./SaveLoadSettings";
+import Widgets from "./Widgets";
 import Link from "./ILink";
 
 import mapLinksDefault from "./MapLinks";
@@ -102,12 +102,10 @@ function App() {
               defaultLinks={quickLinksDefault}
             />
           )}
-
-          {/* Widgets */}
-          <CurrencyExchangeWidget />
         </div>
         <div id="right-wrapper" className="flex flex-col md:flex-row">
           <Feeds />
+          <Widgets />
         </div>
       </div>
     </div>

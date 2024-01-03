@@ -169,7 +169,7 @@ const Feeds = () => {
     <div id="feeds" className="flex flex-col md:flex-row mr-2 md:mr-0">
       {bsgTwitterFeed()}
       {eftRedditHot()}
-      {ytGigabeefEmbed()}
+      {/* {ytGigabeefEmbed()} */}
     </div>
   );
 };
