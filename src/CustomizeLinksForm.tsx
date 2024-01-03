@@ -156,7 +156,11 @@ const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
           </span>
         )}
 
-        <LinkForm links={formData} handleFormChange={handleFormChange} />
+        <LinkForm
+          links={formData}
+          handleFormChange={handleFormChange}
+          handleDelete={handleDelete}
+        />
 
         <button
           id="add-new"

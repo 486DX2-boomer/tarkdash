@@ -7,8 +7,8 @@ Helpful information for playing EFT.
 Customizable links functionality is partially implemented, still requires the following:
 
 - [x] Save and load custom settings to user's local storage (LoadUserSavedSettings.tsx), App.tsx lines 13-14
-- [ ] Add New ➕ button
-- [ ] Delete ❌ button
+- [x] Add New ➕ button
+- [x] Delete ❌ button
 
 - [ ] Import and export custom settings to other devices
 
