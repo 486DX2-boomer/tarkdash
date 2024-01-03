@@ -71,14 +71,14 @@ const SaveLoadSettings: React.FC<SaveLoadSettingsProps> = (props) => {
   }, []);
 
   return (
-    <div>
+    <>
       {enableSave && (
         <EnableSaveHooks
           mapLinksReference={props.mapLinksReference}
           quickLinksReference={props.quickLinksReference}
         />
       )}
-    </div>
+    </>
   );
 };
 
