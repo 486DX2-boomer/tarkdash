@@ -9,6 +9,7 @@ import About from "./About";
 
 import mapLinksDefault from "./MapLinks";
 import quickLinksDefault from "./QuickLinks";
+import SettingsModal from "./SettingsModal";
 
 function App() {
   // initialize with blank Link[], loading is handled in SaveLoadSettings
@@ -41,6 +42,12 @@ function App() {
   const [aboutToggled, setAboutToggled] = useState(false);
   const handleAboutToggled = () => {
     setAboutToggled(!aboutToggled);
+  };
+
+  // settings modal
+  const [settingsModalToggled, setSettingsModalToggled] = useState(false);
+  const handleSettingsModalToggled = () => {
+    setSettingsModalToggled(!settingsModalToggled);
   };
 
   return (
@@ -114,7 +121,7 @@ function App() {
           <Widgets />
         </div>
       </div>
-      <div id="footer" className="fixed bottom-0 right-0 bg-stone-800 p-4">
+      <div id="footer" className="fixed bottom-0 right-0 bg-stone-900 p-2">
         <button
           id="aboutToggle"
           className="text-red-400 hover:text-red-300"
@@ -123,6 +130,22 @@ function App() {
           About
         </button>
         {aboutToggled && <About toggleAbout={setAboutToggled} />}
+        <button
+          id="settingsModalToggle"
+          className="text-red-400 hover:text-red-300 ml-2"
+          onClick={handleSettingsModalToggled}
+        >
+          Import/Export Settings
+        </button>
+        {settingsModalToggled && (
+          <SettingsModal
+            mapLinks={mapLinks}
+            setMapLinksHook={setMapLinks}
+            quickLinks={quickLinks}
+            setQuickLinksHook={setQuickLinks}
+            toggleSettingsModal={setSettingsModalToggled}
+          />
+        )}
       </div>
     </div>
   );
