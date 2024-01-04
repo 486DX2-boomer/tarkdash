@@ -26,42 +26,46 @@ const LinkForm = ({
   handleFormChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleDelete: (index: number) => void;
 }) => {
-  return links.map((l, index) => (
-    <div key={index} className="p-1">
-      <label htmlFor={`name-${index}`} className="text-red-400 pr-2">
-        Name:
-      </label>
-      <input
-        type="text"
-        id={`name-${index}`}
-        required
-        className="bg-stone-200 text-black p-1 mr-2"
-        value={l.name}
-        onChange={handleFormChange}
-        data-index={index}
-      />
+  return (
+    <div>
+      {links.map((l, index) => (
+        <div key={index} className="p-1">
+          <label htmlFor={`name-${index}`} className="text-red-400 pr-2">
+            Name:
+          </label>
+          <input
+            type="text"
+            id={`name-${index}`}
+            required
+            className="bg-stone-200 text-black p-1 mr-2"
+            value={l.name}
+            onChange={handleFormChange}
+            data-index={index}
+          />
 
-      <label htmlFor={`url-${index}`} className="text-red-400 pr-2">
-        URL
-      </label>
-      <input
-        type="url"
-        id={`url-${index}`}
-        required
-        className="bg-stone-200 text-black p-1 text-sm"
-        value={l.url}
-        onChange={handleFormChange}
-        data-index={index}
-      />
-      <button
-        id="delete-button"
-        className="cursor-pointer p-1 bg-stone-200 text-red-900 hover:text-red-600 rounded-sm font-black ml-4"
-        onClick={() => handleDelete(index)}
-      >
-        X
-      </button>
+          <label htmlFor={`url-${index}`} className="text-red-400 pr-2">
+            URL
+          </label>
+          <input
+            type="url"
+            id={`url-${index}`}
+            required
+            className="bg-stone-200 text-black p-1 text-sm"
+            value={l.url}
+            onChange={handleFormChange}
+            data-index={index}
+          />
+          <button
+            id="delete-button"
+            className="cursor-pointer p-1 bg-stone-200 text-red-900 hover:text-red-600 rounded-sm font-black ml-4"
+            onClick={() => handleDelete(index)}
+          >
+            X
+          </button>
+        </div>
+      ))}
     </div>
-  ));
+  );
 };
 
 const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
