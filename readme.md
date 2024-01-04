@@ -11,6 +11,6 @@ Customizable links functionality is partially implemented, still requires the fo
 - [x] Delete ❌ button
 - [x] Remove youtube pane (not really useful), make that the dedicated widget pane (with current USD/RUB converter, and more to come)
 - [x] About page, acknowledgements/thank you page (such as tarkov.dev for providing API access)
-- [ ] Import and export custom settings to other devices
+- [x] Import and export custom settings to other devices
 - [ ] Total visual design rework, font, color scheme, icons, and header logo
 - [ ] Fix @tarkov twitter feed always being the wrong height for its pane
