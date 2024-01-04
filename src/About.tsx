@@ -53,7 +53,7 @@ const About = (props: AboutProps) => {
         </ul>
         <button
           id="aboutClose"
-          className="cursor-pointer bg-red-600 p-2 mt-2 rounded-md hover:bg-red-500"
+          className="cursor-pointer bg-stone-800 text-red-400 font-bold p-2 mt-2 hover:bg-stone-600"
           onClick={() => {
             props.toggleAbout(false);
           }}
