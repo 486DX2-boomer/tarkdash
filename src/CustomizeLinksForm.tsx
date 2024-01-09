@@ -139,7 +139,7 @@ const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
   };
 
   return (
-    <div
+    <dialog
       id="modal"
       className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 shadow-lg"
     >
@@ -202,7 +202,7 @@ const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
           </div>
         )}
       </div>
-    </div>
+    </dialog>
   );
 };
 

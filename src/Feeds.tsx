@@ -158,20 +158,20 @@ const bsgTwitterFeed = () => {
 
 export const twitterFeed = () => {
   return (
-    <div id="twitter" className="">
+    <article id="twitter" className="">
       {bsgTwitterFeed()}
       {/* {eftRedditHot()} */}
       {/* {ytGigabeefEmbed()} */}
-    </div>
+    </article>
   );
 };
 
 export const redditFeed = () => {
   return (
-    <div id="reddit" className="">
+    <article id="reddit" className="">
       {/* {bsgTwitterFeed()} */}
       {eftRedditHot()}
       {/* {ytGigabeefEmbed()} */}
-    </div>
+    </article>
   );
 };

@@ -71,7 +71,7 @@ const SettingsModal: React.FC<SettingsModalProps> = (props) => {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 shadow-lg">
+    <dialog className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 shadow-lg">
       <div className="bg-zinc-800 p-4">
         <div className="text-amber-400 font-medium text-xl">
           Import/Export Settings
@@ -105,7 +105,7 @@ const SettingsModal: React.FC<SettingsModalProps> = (props) => {
           Save
         </button>
       </div>
-    </div>
+    </dialog>
   );
 };
 

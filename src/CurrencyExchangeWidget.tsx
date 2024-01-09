@@ -95,7 +95,7 @@ const CurrencyExchangeWidget = () => {
   };
 
   return (
-    <div className="p-2 bg-zinc-800 rounded-sm">
+    <article className="p-2 bg-zinc-800 rounded-sm">
       <h2 className="font-medium pb-2">USD/RUB Calculator</h2>
       <div className="mb-4">
         <label className="block text-sm text-green-400 font-medium">USD:</label>
@@ -126,7 +126,7 @@ const CurrencyExchangeWidget = () => {
           Tarkov.dev API
         </a>
       </div>
-    </div>
+    </article>
   );
 };
 

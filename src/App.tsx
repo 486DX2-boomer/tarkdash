@@ -58,12 +58,12 @@ function App() {
         setQuickLinksHook={setQuickLinks}
         quickLinksReference={quickLinks}
       />
-      <div id="header-wrapper" className="h-fit p-2">
+      <header id="header-wrapper" className="h-fit p-2">
         <h1 className="font-semibold text-4xl text-amber-400">Tarkdash</h1>
         <span className="text-white font-medium">
           🧩helpful links for EFT🧩
         </span>
-      </div>
+      </header>
       <div
         id="sub-wrapper"
         className="flex flex-col md:flex-row justify-evenly min-h-[800px]"
@@ -131,7 +131,7 @@ function App() {
           <Widgets />
         </div>
       </div>
-      <div
+      <footer
         id="footer"
         className=" fixed bottom-0 right-0 p-2 bg-zinc-800 rounded-sm"
       >
@@ -159,7 +159,7 @@ function App() {
             toggleSettingsModal={setSettingsModalToggled}
           />
         )}
-      </div>
+      </footer>
     </div>
   );
 }

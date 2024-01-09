@@ -6,7 +6,7 @@ interface AboutProps {
 
 const About = (props: AboutProps) => {
   return (
-    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 shadow-lg overflow-scroll">
+    <dialog className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 shadow-lg overflow-scroll">
       <div className="bg-zinc-700 p-6 rounded text-white max-w-md">
         <h2 className="text-3xl font-bold mb-4 text-amber-400">Tarkdash</h2>
         <p className="text-lg mb-2">All your Tarkov references in one place.</p>
@@ -61,7 +61,7 @@ const About = (props: AboutProps) => {
           Close
         </button>
       </div>
-    </div>
+    </dialog>
   );
 };
 

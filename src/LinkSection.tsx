@@ -11,10 +11,10 @@ const LinkSection = (props: { links: Link[]; header: string; id: string }) => {
     );
   });
   return (
-    <div className="pb-1" id={props.id}>
+    <article className="pb-1" id={props.id}>
       <h2 className="font-medium text-lg pl-1 pt-1">{props.header}</h2>
       <ul className="pl-1">{list}</ul>
-    </div>
+    </article>
   );
 };
 
