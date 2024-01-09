@@ -72,19 +72,19 @@ const SettingsModal: React.FC<SettingsModalProps> = (props) => {
 
   return (
     <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 shadow-lg">
-      <div className="bg-stone-700 p-6 rounded">
-        <div className="text-red-400 font-bold pb-2">
+      <div className="bg-zinc-800 p-4">
+        <div className="text-amber-400 font-medium text-xl">
           Import/Export Settings
         </div>
-        <div className="text-red-400 italic pb-2">
+        <div className="text-amber-400 pt-2 pb-2 italic">
           Copy from or paste into this box to import or export your
           customizations.
         </div>
         {errorMessage && (
-          <div className="text-red-600 font-bold pb-2">{errorMessage}</div>
+          <div className="text-red-500 font-bold">{errorMessage}</div>
         )}
         <button
-          className="close cursor-pointer font-bold bg-stone-800 hover:bg-stone-600 text-red-400 p-1"
+          className="cursor-pointer p-1 mt-2 mb-2 text-amber-400 font-bold bg-zinc-700 hover:bg-zinc-600"
           onClick={() => {
             props.toggleSettingsModal(false);
           }}
@@ -99,7 +99,7 @@ const SettingsModal: React.FC<SettingsModalProps> = (props) => {
         />
 
         <button
-          className="cursor-pointer font-bold bg-stone-800 hover:bg-stone-600 text-red-400 p-1 mt-2"
+          className="cursor-pointer p-1 mt-2 mb-2 text-amber-400 font-bold bg-zinc-700 hover:bg-zinc-600"
           onClick={handleSave}
         >
           Save

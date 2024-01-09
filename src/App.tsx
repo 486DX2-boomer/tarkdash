@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState, useEffect, SetStateAction } from "react";
 import LinkSection from "./LinkSection";
-import Feeds from "./Feeds";
+import { twitterFeed, redditFeed } from "./Feeds";
 import CustomizeLinksForm from "./CustomizeLinksForm";
 import SaveLoadSettings from "./SaveLoadSettings";
 import Widgets from "./Widgets";
@@ -51,35 +51,31 @@ function App() {
   };
 
   return (
-    <div
-      id="App"
-      className="flex flex-col bg-stone-800 min-h-full md:min-h-screen"
-    >
+    <div id="App" className="min-h-screen bg-zinc-900 sans">
       <SaveLoadSettings
         setMapLinksHook={setMapLinks}
         mapLinksReference={mapLinks}
         setQuickLinksHook={setQuickLinks}
         quickLinksReference={quickLinks}
       />
-      <div
-        id="header-wrapper"
-        className="flex flex-col ml-2 mt-3 mb-2 space-y-3 mr-2 rounded-xl p-2"
-      >
-        <h1 className="text-4xl text-red-400">Tarkdash</h1>
-        <span className="text-white text-xl">🧩helpful links for EFT🧩</span>
+      <div id="header-wrapper" className="h-fit p-2">
+        <h1 className="font-semibold text-4xl text-amber-400">Tarkdash</h1>
+        <span className="text-white font-medium">
+          🧩helpful links for EFT🧩
+        </span>
       </div>
       <div
         id="sub-wrapper"
-        className="flex flex-col md:flex-row justify-center"
+        className="flex flex-col md:flex-row justify-evenly min-h-[800px]"
       >
         <div
-          id="left-wrapper"
-          className="flex flex-col ml-2 bg-stone-700 p-2 rounded-xl shadow-xl max-h-fit overflow-y-auto mb-2 md:pr-8 md:mb-0 mr-2 md:mr-0"
+          id="link-wrapper"
+          className="flex flex-col md:w-1/5 p-1 m-1 bg-zinc-700 rounded-sm shadow-md text-amber-400"
         >
           {/* Link sections */}
           <LinkSection links={[...mapLinks]} header="Maps" id="map-section" />
           <button
-            className="bg-stone-800 rounded-md text-red-400 hover:text-red-300 text-sm"
+            className="bg-zinc-800 rounded-sm hover:bg-zinc-600 w-64 self-center"
             onClick={handleMapLinkToggle}
           >
             Customize Map Links
@@ -101,7 +97,7 @@ function App() {
           />
 
           <button
-            className="bg-stone-800 rounded-md text-red-400 hover:text-red-300 text-sm"
+            className="bg-zinc-800 rounded-sm hover:bg-zinc-600 w-64 self-center"
             onClick={handleQuickLinksModalToggled}
           >
             Customize Quick Links
@@ -116,15 +112,32 @@ function App() {
             />
           )}
         </div>
-        <div id="right-wrapper" className="flex flex-col md:flex-row">
-          <Feeds />
+        <div
+          id="tweet-wrapper"
+          className="flex flex-col w-auto p-1 m-1 bg-zinc-700 rounded-sm shadow-md text-amber-400"
+        >
+          {twitterFeed()}
+        </div>
+        <div
+          id="reddit-wrapper"
+          className="flex flex-col w-auto p-1 m-1 bg-zinc-700 rounded-sm shadow-md text-amber-400"
+        >
+          {redditFeed()}
+        </div>
+        <div
+          id="widget-wrapper"
+          className="flex flex-col md:w-1/6 p-1 m-1 bg-zinc-700 rounded-sm shadow-md text-amber-400"
+        >
           <Widgets />
         </div>
       </div>
-      <div id="footer" className="fixed bottom-0 right-0 bg-stone-900 p-2">
+      <div
+        id="footer"
+        className=" fixed bottom-0 right-0 p-2 bg-zinc-800 rounded-sm"
+      >
         <button
           id="aboutToggle"
-          className="text-red-400 hover:text-red-300"
+          className="text-amber-400 hover:text-amber-300 p-1 m-1"
           onClick={handleAboutToggled}
         >
           About
@@ -132,7 +145,7 @@ function App() {
         {aboutToggled && <About toggleAbout={setAboutToggled} />}
         <button
           id="settingsModalToggle"
-          className="text-red-400 hover:text-red-300 ml-2"
+          className="text-amber-400 hover:text-amber-300 p-1 m-1"
           onClick={handleSettingsModalToggled}
         >
           Import/Export Settings
