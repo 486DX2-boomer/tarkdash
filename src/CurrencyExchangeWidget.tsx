@@ -95,10 +95,8 @@ const CurrencyExchangeWidget = () => {
   };
 
   return (
-    <div className="bg-stone-800 ml-1 mt-2 pl-2 pr-2 pb-2 pt-1 md:mb-0 max-w-xs rounded-md shadow-sm">
-      <h2 className="text-l text-white font-semibold mb-3">
-        USD/RUB Calculator
-      </h2>
+    <article className="p-2 bg-zinc-800 rounded-sm">
+      <h2 className="font-medium pb-2">USD/RUB Calculator</h2>
       <div className="mb-4">
         <label className="block text-sm text-green-400 font-medium">USD:</label>
         <input
@@ -117,21 +115,18 @@ const CurrencyExchangeWidget = () => {
           onChange={handleRubInputChange}
         />
       </div>
-      <div className="text-sm text-white italic mb-2">
+      <div className="text-sm italic">
         Live in-game USD/RUB exchange rate (refreshed every 5 minutes) Your
         exact USD cost from Peacekeeper will vary.
       </div>
 
-      <div className="text-xs text-white pb-1">
+      <div className="text-sm pt-1">
         Provided by{" "}
-        <a
-          className="text-red-400 hover:underline"
-          href="https://tarkov.dev/api/"
-        >
+        <a className="text-white" href="https://tarkov.dev/api/">
           Tarkov.dev API
         </a>
       </div>
-    </div>
+    </article>
   );
 };
 

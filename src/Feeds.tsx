@@ -117,19 +117,14 @@ const eftRedditHot = () => {
 
   return (
     <>
-      <div
-        id="reddit-posts"
-        className="bg-stone-700 text-white pl-2 pt-1 ml-2 pr-2 rounded-xl shadow-xl mb-2 md:mb-0 md:mr-2"
-      >
-        <h3 className="text-xl mb-2">Top cringe from /r/EscapefromTarkov</h3>
+      <h3 className="font-medium text-lg p-1">
+        Top cringe from /r/EscapefromTarkov
+      </h3>
+      <div id="reddit-posts" className="">
         <ul>
           {posts.map((post) => (
-            <li key={post.data.id} className="mb-1">
-              <a
-                href={post.data.url}
-                target="_blank"
-                className="text-red-400 hover:text-red-300"
-              >
+            <li key={post.data.id} className="mb-2">
+              <a href={post.data.url} target="_blank" className="">
                 ◽ {truncate(post.data.title)}
               </a>
             </li>
@@ -143,18 +138,15 @@ const eftRedditHot = () => {
 const bsgTwitterFeed = () => {
   return (
     <>
-      <div
-        id="bsg-twit-embed"
-        className="bg-stone-700 rounded-xl ml-2 pl-2 pr-2 pb-2 pt-1 shadow-xl mb-2 md:mb-0"
-      >
-        <h2 className="text-white text-xl mb-2">Feeds</h2>
+      <h2 className="font-medium text-lg p-1">Feeds</h2>
+      <div id="bsg-twit-embed" className="m-2 h-full">
         <Timeline
           dataSource={{
             sourceType: "profile",
             screenName: "tarkov",
           }}
           options={{
-            height: "540",
+            height: "720",
             width: "480",
             theme: "dark",
           }}
@@ -164,14 +156,22 @@ const bsgTwitterFeed = () => {
   );
 };
 
-const Feeds = () => {
+export const twitterFeed = () => {
   return (
-    <div id="feeds" className="flex flex-col md:flex-row mr-2 md:mr-0">
+    <article id="twitter" className="">
       {bsgTwitterFeed()}
-      {eftRedditHot()}
+      {/* {eftRedditHot()} */}
       {/* {ytGigabeefEmbed()} */}
-    </div>
+    </article>
   );
 };
 
-export default Feeds;
+export const redditFeed = () => {
+  return (
+    <article id="reddit" className="">
+      {/* {bsgTwitterFeed()} */}
+      {eftRedditHot()}
+      {/* {ytGigabeefEmbed()} */}
+    </article>
+  );
+};

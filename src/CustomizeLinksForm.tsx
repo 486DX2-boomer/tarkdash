@@ -30,7 +30,7 @@ const LinkForm = ({
     <div>
       {links.map((l, index) => (
         <div key={index} className="p-1">
-          <label htmlFor={`name-${index}`} className="text-red-400 pr-2">
+          <label htmlFor={`name-${index}`} className="text-amber-400 pr-2">
             Name:
           </label>
           <input
@@ -43,7 +43,7 @@ const LinkForm = ({
             data-index={index}
           />
 
-          <label htmlFor={`url-${index}`} className="text-red-400 pr-2">
+          <label htmlFor={`url-${index}`} className="text-amber-400 pr-2">
             URL
           </label>
           <input
@@ -139,16 +139,16 @@ const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
   };
 
   return (
-    <div
+    <dialog
       id="modal"
       className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 shadow-lg"
     >
       <div
         id="modal-content"
-        className="bg-stone-700 p-6 rounded flex-row overflow-scroll max-h-screen"
+        className="bg-zinc-800 p-6 rounded flex-row overflow-scroll max-h-screen"
       >
         <button
-          className="close cursor-pointer font-bold bg-stone-800 text-red-400 hover:bg-stone-600 p-1"
+          className="close cursor-pointer font-bold bg-zinc-700 text-amber-400 hover:bg-zinc-600 p-1 round-sm"
           onClick={props.toggleModal}
         >
           Close
@@ -168,7 +168,7 @@ const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
 
         <button
           id="add-new"
-          className="cursor-pointer font-bold bg-stone-800 text-red-400 hover:bg-stone-600 p-1 ml-1 mr-1"
+          className="cursor-pointer font-medium bg-stone-800 text-amber-400 hover:bg-zinc-600 p-1 ml-1 mr-1"
           onClick={handleAddNew}
         >
           Add New +
@@ -176,7 +176,7 @@ const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
 
         <button
           id="save"
-          className="cursor-pointer font-bold bg-stone-800 text-red-400 hover:bg-stone-600 p-1"
+          className="cursor-pointer font-medium bg-stone-800 text-amber-400 hover:bg-zinc-600 p-1"
           onClick={handleFormSave}
         >
           Save
@@ -184,7 +184,7 @@ const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
 
         <button
           id="revert-to-default"
-          className="cursor-pointer font-bold bg-stone-800 text-red-400 hover:bg-stone-600 p-1 ml-1 mr-1"
+          className="cursor-pointer font-medium bg-stone-800 text-amber-400 hover:bg-zinc-600 p-1 ml-1 mr-1"
           onClick={handleShowDefaultWarning}
         >
           Revert to Default
@@ -194,7 +194,7 @@ const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
             This will revert all your link customizations to default.
             <br /> Are you sure?
             <button
-              className="bg-stone-900 hover:bg-stone-600 m-2 p-1"
+              className="bg-zinc-900 text-amber-400 hover:bg-zinc-600 m-2 p-1"
               onClick={handleRevertToDefault}
             >
               Confirm
@@ -202,7 +202,7 @@ const CustomizeLinksForm: React.FC<LinkFormProps> = (props: LinkFormProps) => {
           </div>
         )}
       </div>
-    </div>
+    </dialog>
   );
 };
 
