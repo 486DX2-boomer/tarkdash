@@ -114,13 +114,13 @@ function App() {
         </div>
         <div
           id="tweet-wrapper"
-          className="flex flex-col w-auto p-1 m-1 bg-zinc-700 rounded-sm shadow-md text-amber-400"
+          className="flex flex-col w-auto p-1 m-1 bg-zinc-700 rounded-sm shadow-md text-amber-400 min-w-[540px]"
         >
           {twitterFeed()}
         </div>
         <div
           id="reddit-wrapper"
-          className="flex flex-col w-auto p-1 m-1 bg-zinc-700 rounded-sm shadow-md text-amber-400"
+          className="flex flex-col w-auto p-1 m-1 bg-zinc-700 rounded-sm shadow-md text-amber-400 min-w-[540px]"
         >
           {redditFeed()}
         </div>

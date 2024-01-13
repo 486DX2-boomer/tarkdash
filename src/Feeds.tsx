@@ -109,10 +109,15 @@ const eftVgGeneral = () => {
 const eftRedditHot = () => {
   const [posts, setPosts] = useState<Post[]>([]);
 
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     fetch("https://www.reddit.com/r/EscapefromTarkov/hot.json?limit=15")
       .then((res) => res.json())
-      .then((data) => setPosts(data.data.children));
+      .then((data) => setPosts(data.data.children))
+      .then(() => {
+        setLoading(false);
+      });
   }, []);
 
   return (
@@ -121,25 +126,39 @@ const eftRedditHot = () => {
         Top cringe from /r/EscapefromTarkov
       </h3>
       <div id="reddit-posts" className="">
-        <ul>
-          {posts.map((post) => (
-            <li key={post.data.id} className="mb-2">
-              <a href={post.data.url} target="_blank" className="">
-                ◽ {truncate(post.data.title)}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {loading && (
+          <span className="material-symbols-outlined flex justify-center mt-8 animate-spin">
+            progress_activity
+          </span>
+        )}
+        {!loading && (
+          <ul>
+            {posts.map((post) => (
+              <li key={post.data.id} className="mb-2">
+                <a href={post.data.url} target="_blank" className="">
+                  ◽ {truncate(post.data.title)}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </>
   );
 };
 
 const bsgTwitterFeed = () => {
+  const [loading, setLoading] = useState(true);
+
   return (
     <>
       <h2 className="font-medium text-lg p-1">Feeds</h2>
       <div id="bsg-twit-embed" className="m-2 h-full">
+        {loading && (
+          <span className="material-symbols-outlined flex justify-center mt-8 animate-spin">
+            progress_activity
+          </span>
+        )}
         <Timeline
           dataSource={{
             sourceType: "profile",
@@ -149,6 +168,9 @@ const bsgTwitterFeed = () => {
             height: "720",
             width: "480",
             theme: "dark",
+          }}
+          onLoad={() => {
+            setLoading(false);
           }}
         />
       </div>
