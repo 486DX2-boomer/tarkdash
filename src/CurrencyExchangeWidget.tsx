@@ -98,22 +98,32 @@ const CurrencyExchangeWidget = () => {
     <article className="p-2 bg-zinc-800 rounded-sm">
       <h2 className="font-medium pb-2">USD/RUB Calculator</h2>
       <div className="mb-4">
-        <label className="block text-sm text-green-400 font-medium">USD:</label>
-        <input
-          className="border border-gray-300 bg-stone-400 rounded-md p-2 w-full text-slate-800 font-medium"
-          type="text"
-          value={usdInput}
-          onChange={handleUsdInputChange}
-        />
+        <label
+          htmlFor="US Dollars"
+          className="block text-sm text-green-400 font-medium"
+        >
+          USD:
+          <input
+            className="border border-gray-300 bg-stone-400 rounded-md p-2 w-full text-slate-800 font-medium"
+            type="text"
+            value={usdInput}
+            onChange={handleUsdInputChange}
+          />
+        </label>
       </div>
       <div className="mb-4">
-        <label className="block text-sm text-red-400 font-medium">RUB:</label>
-        <input
-          className="border border-gray-300 bg-stone-400 rounded-md p-2 w-full text-slate-800 font-medium"
-          type="text"
-          value={rubInput}
-          onChange={handleRubInputChange}
-        />
+        <label
+          htmlFor="Rubles"
+          className="block text-sm text-red-400 font-medium"
+        >
+          RUB:
+          <input
+            className="border border-gray-300 bg-stone-400 rounded-md p-2 w-full text-slate-800 font-medium"
+            type="text"
+            value={rubInput}
+            onChange={handleRubInputChange}
+          />
+        </label>
       </div>
       <div className="text-sm italic">
         Live in-game USD/RUB exchange rate (refreshed every 5 minutes) Your
