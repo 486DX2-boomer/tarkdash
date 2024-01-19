@@ -123,7 +123,13 @@ const eftRedditHot = () => {
   return (
     <>
       <h3 className="font-medium text-lg p-1">
-        Top cringe from /r/EscapefromTarkov
+        Top cringe from{" "}
+        <a
+          className="underline"
+          href="https://www.reddit.com/r/EscapefromTarkov/"
+        >
+          /r/EscapefromTarkov
+        </a>
       </h3>
       <div id="reddit-posts" className="">
         {loading && (
