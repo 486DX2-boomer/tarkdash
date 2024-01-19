@@ -64,6 +64,10 @@ const CurrencyExchangeWidget = () => {
     } catch (error) {
       console.error("Error fetching exchange rate:", error);
     }
+
+    console.log(
+      "Fetched exchange rate from tarkov.dev. You should see this message in the console once, on page load."
+    );
   };
 
   useEffect(() => {
@@ -71,9 +75,9 @@ const CurrencyExchangeWidget = () => {
     getExchangeRateFromAPI();
 
     // Refresh exchange rate every 5 minutes
-    const intervalId = setInterval(getExchangeRateFromAPI, 5 * 60 * 1000);
+    // const intervalId = setInterval(getExchangeRateFromAPI, 5 * 60 * 1000);
 
-    return () => clearInterval(intervalId); // Clean up the interval on component unmount
+    // return () => clearInterval(intervalId);
   }, []);
 
   const handleUsdInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -126,8 +130,8 @@ const CurrencyExchangeWidget = () => {
         </label>
       </div>
       <div className="text-sm italic">
-        Live in-game USD/RUB exchange rate (refreshed every 5 minutes) Your
-        exact USD cost from Peacekeeper will vary.
+        Live in-game USD/RUB exchange rate (refreshed on page load). Your exact
+        USD cost from Peacekeeper will vary.
       </div>
 
       <div className="text-sm pt-1">
